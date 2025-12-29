@@ -63,3 +63,91 @@
 .submit-btn:hover {
   background: #005fa3;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the form */
+.task-form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form itself */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+.task-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs and Textareas */
+.task-form input,
+.task-form textarea,
+.task-form select {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+/* Focus effect */
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+  outline: none;
+  border-color: #00bfff;
+}
+
+/* Submit button */
+.submit-btn {
+  padding: 12px;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Hover effect */
+.submit-btn:hover {
+  background-color: #0095d6;
+}
