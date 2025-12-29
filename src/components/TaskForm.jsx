@@ -12,7 +12,7 @@ const TaskForm = ({ taskId }) => {
 
   useEffect(() => {
     if (taskId) {
-      axios.get("http://localhost:5000/tasks")
+      axios.get("https://kesavsofttask3-production.up.railway.app/tasks")
         .then(res => {
           const found = res.data.find(t => t._id === taskId);
           if (found) setTask(found);
@@ -24,9 +24,9 @@ const TaskForm = ({ taskId }) => {
     e.preventDefault();
 
     if (taskId) {
-      await axios.put(`http://localhost:5000/update-task/${taskId}`, task);
+      await axios.put(`https://kesavsofttask3-production.up.railway.app/update-task/${taskId}`, task);
     } else {
-      await axios.post("http://localhost:5000/add-task", task);
+      await axios.post("https://kesavsofttask3-production.up.railway.app/add-task", task);
     }
 
     navigate("/tasks");

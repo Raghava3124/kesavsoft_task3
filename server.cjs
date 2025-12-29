@@ -5,6 +5,9 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
+import cors from "cors";
+
+app.use(cors());
 
 // MongoDB connection
 mongoose.connect("mongodb+srv://root:Password%40123@cluster0.9qlu1ki.mongodb.net/taskDB?retryWrites=true&w=majority")

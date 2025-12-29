@@ -6,7 +6,7 @@ const AllTasks = () => {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
-    const res = await axios.get("http://localhost:5000/tasks");
+    const res = await axios.get("https://kesavsofttask3-production.up.railway.app/tasks");
     setTasks(res.data);
   };
 
@@ -15,7 +15,7 @@ const AllTasks = () => {
   }, []);
 
   const deleteTask = async (id) => {
-    await axios.delete(`http://localhost:5000/delete-task/${id}`);
+    await axios.delete(`https://kesavsofttask3-production.up.railway.app/delete-task/${id}`);
     fetchTasks();
   };
 
