@@ -28,6 +28,8 @@ const AllTasks = () => {
           <div key={task._id} className="task-card">
             <h4 className="task-title">{task.title}</h4>
             <p className="task-desc">{task.description}</p>
+            <p>Status: <strong>{task.status}</strong></p>
+
 
             <div className="task-actions">
               <Link to={`/edit/${task._id}`} className="btn edit-btn">Edit</Link>

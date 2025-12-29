@@ -36,31 +36,44 @@ const TaskForm = ({ taskId }) => {
     <div className="task-form-container">
       <h2>{taskId ? "Edit Task" : "Create New Task"}</h2>
       <form onSubmit={handleSubmit} className="task-form">
-        <label>
-          Title
-          <input
-            type="text"
-            placeholder="Enter task title"
-            value={task.title}
-            onChange={e => setTask({ ...task, title: e.target.value })}
-            required
-          />
-        </label>
+  <label>
+    Title
+    <input
+      type="text"
+      placeholder="Enter task title"
+      value={task.title}
+      onChange={e => setTask({ ...task, title: e.target.value })}
+      required
+    />
+  </label>
 
-        <label>
-          Description
-          <textarea
-            placeholder="Enter task description"
-            value={task.description}
-            onChange={e => setTask({ ...task, description: e.target.value })}
-            required
-          />
-        </label>
+  <label>
+    Description
+    <textarea
+      placeholder="Enter task description"
+      value={task.description}
+      onChange={e => setTask({ ...task, description: e.target.value })}
+      required
+    />
+  </label>
 
-        <button type="submit" className="submit-btn">
-          {taskId ? "Update Task" : "Add Task"}
-        </button>
-      </form>
+  {/* ✅ Add this Status field */}
+  <label>
+    Status
+    <select
+      value={task.status || "incomplete"}
+      onChange={e => setTask({ ...task, status: e.target.value })}
+    >
+      <option value="incomplete">Incomplete</option>
+      <option value="completed">Completed</option>
+    </select>
+  </label>
+
+  <button type="submit" className="submit-btn">
+    {taskId ? "Update Task" : "Add Task"}
+  </button>
+</form>
+
     </div>
   );
 };

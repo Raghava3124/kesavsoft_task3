@@ -17,8 +17,10 @@ mongoose.connect("mongodb+srv://root:Password%40123@cluster0.9qlu1ki.mongodb.net
 const taskSchema = new mongoose.Schema({
   title: String,
   description: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  status: { type: String, enum: ["incomplete", "completed"], default: "incomplete" }
 });
+
 
 const Task = mongoose.model("Task", taskSchema);
 
@@ -33,6 +35,7 @@ app.post("/add-task", async (req, res) => {
   await task.save();
   res.json({ message: "Task added", task });
 });
+
 
 app.put("/update-task/:id", async (req, res) => {
   await Task.findByIdAndUpdate(req.params.id, req.body);
